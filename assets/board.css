@@ -58,6 +58,7 @@ section > h2 small { font-family: var(--font-mono); font-size: 13px; font-weight
   background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 14px;
 }
 .deliv img { width: 96px; height: auto; border-radius: 3px; display: block; }
+.deliv-no { width: 96px; aspect-ratio: 1; max-width: 100%; display: grid; place-items: center; border-radius: 3px; background: var(--chili); color: var(--paper); font-family: var(--font-display); font-weight: 900; font-stretch: 62%; font-size: 64px; line-height: 1; }
 .deliv h3 { font-size: 22px; line-height: 1.3; }
 .deliv .desc { font-size: 15.5px; color: var(--muted); }
 .pill { display: inline-block; font-size: 13px; font-weight: 700; padding: 1px 10px; border-radius: 999px; margin-right: 6px; vertical-align: 2px; }
@@ -83,6 +84,35 @@ section > h2 small { font-family: var(--font-mono); font-size: 13px; font-weight
   .hero { grid-template-columns: 1fr; }
   .team-no { grid-row: auto; }
   .deliv { grid-template-columns: 72px minmax(0, 1fr); }
-  .deliv img { width: 72px; }
+  .deliv img, .deliv-no { width: 72px; }
+  .deliv-no { font-size: 48px; }
   .deliv .open { grid-column: 1 / -1; text-align: center; }
+}
+
+/* 서브 페이지 상단바의 메인보드 링크 */
+.topbar > a { color: var(--ink); text-decoration: none; }
+.topbar > a:hover { color: var(--chili); }
+
+/* 캐릭터 기획 페이지 */
+.lead { font-size: 19px; max-width: 62ch; }
+.members { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.member { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.member header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-bottom: 2px solid var(--ink); padding-bottom: 10px; }
+.member .tag { font-family: var(--font-display); font-weight: 900; font-stretch: 70%; font-size: 48px; line-height: .9; }
+.member .pos { font-weight: 700; color: var(--chili); text-align: right; }
+.member .quote { font-size: 17px; font-weight: 500; }
+.member dl { margin: 0; display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 6px 12px; font-size: 16px; }
+.member dt { color: var(--muted); }
+.member dd { margin: 0; }
+.member .status { font-size: 14px; color: var(--muted); }
+.pairs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.pair { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; }
+.pair b { font-family: var(--font-display); font-weight: 900; font-stretch: 75%; font-size: 34px; line-height: 1; }
+.pair b i { font-style: normal; color: var(--chili); padding-inline: 6px; }
+.pair span { font-size: 16px; color: var(--muted); }
+.spec { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; }
+.spec strong { color: var(--chili); }
+.rule { background: var(--card); border: 1.5px solid var(--chili); border-radius: 6px; padding: 14px 18px; font-size: 17px; }
+@media (max-width: 720px) {
+  .members, .pairs { grid-template-columns: 1fr; }
 }
